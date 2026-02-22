@@ -25,6 +25,9 @@ type MagneticButtonProps = PropsWithChildren<(ButtonProps | AnchorProps)> & {
   className?: string;
 };
 
+type ButtonRestProps = Omit<ButtonProps, 'href'>;
+type AnchorRestProps = Omit<AnchorProps, 'href'>;
+
 export default function MagneticButton({
   children,
   className,
@@ -67,14 +70,14 @@ export default function MagneticButton({
 
   if (href) {
     return (
-      <motion.a href={href} {...(rest as AnchorProps)} {...motionProps}>
+      <motion.a href={href} {...(rest as AnchorRestProps)} {...motionProps}>
         {children}
       </motion.a>
     );
   }
 
   return (
-    <motion.button type="button" {...(rest as ButtonProps)} {...motionProps}>
+    <motion.button type="button" {...(rest as ButtonRestProps)} {...motionProps}>
       {children}
     </motion.button>
   );
