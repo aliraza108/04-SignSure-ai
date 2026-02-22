@@ -199,9 +199,12 @@ export default function UploadDemo() {
     URL.revokeObjectURL(url);
   };
 
-  const clauseEntries = useMemo(() => {
-    if (!report) return [] as Array<[ClauseKey, string]>;
-    return clauseOrder.map((key) => [key, report.clause_analysis[key]]);
+  const clauseEntries = useMemo<Array<[ClauseKey, string]>>(() => {
+    if (!report) return [];
+    return clauseOrder.map((key): [ClauseKey, string] => [
+      key,
+      report.clause_analysis[key],
+    ]);
   }, [report]);
 
   const scoreTarget = report ? overallScoreMap[report.overall_risk] : 0;
