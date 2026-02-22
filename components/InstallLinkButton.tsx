@@ -1,6 +1,7 @@
 'use client';
 
-import type { AnchorHTMLAttributes, MouseEvent, ReactNode } from 'react';
+import type { HTMLMotionProps } from 'framer-motion';
+import type { MouseEvent, ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 import MagneticButton from './MagneticButton';
 
@@ -13,7 +14,10 @@ type InstallLinkButtonProps = {
   href: string;
   className?: string;
   children: ReactNode;
-} & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href' | 'className' | 'children' | 'onClick'>;
+} & Omit<
+  HTMLMotionProps<'a'>,
+  'href' | 'className' | 'children' | 'onClick' | 'ref'
+>;
 
 export default function InstallLinkButton({
   href,
