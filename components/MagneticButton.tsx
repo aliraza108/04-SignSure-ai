@@ -1,19 +1,23 @@
 ﻿'use client';
 
-import { motion, useMotionValue, useReducedMotion, useSpring } from 'framer-motion';
+import {
+  motion,
+  useMotionValue,
+  useReducedMotion,
+  useSpring,
+  type HTMLMotionProps,
+} from 'framer-motion';
 import type {
-  ButtonHTMLAttributes,
-  AnchorHTMLAttributes,
   PropsWithChildren,
   MouseEvent,
 } from 'react';
 import { useRef } from 'react';
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonProps = Omit<HTMLMotionProps<'button'>, 'ref' | 'children'> & {
   href?: undefined;
 };
 
-type AnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+type AnchorProps = Omit<HTMLMotionProps<'a'>, 'ref' | 'children'> & {
   href: string;
 };
 
