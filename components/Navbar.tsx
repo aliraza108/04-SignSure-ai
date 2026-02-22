@@ -6,6 +6,7 @@ import MagneticButton from './MagneticButton';
 const navLinks = [
   { label: 'Features', href: '#features' },
   { label: 'How It Works', href: '#how-it-works' },
+  { label: 'Mobile App', href: '#mobile-app' },
   { label: 'Risk Demo', href: '#demo' },
   { label: 'Pricing', href: '#pricing' },
 ];

@@ -6,6 +6,7 @@ const footerLinks = [
     links: [
       { label: 'Features', href: '#features' },
       { label: 'How It Works', href: '#how-it-works' },
+      { label: 'Mobile App', href: '#mobile-app' },
       { label: 'Pricing', href: '#pricing' },
       { label: 'API', href: '#demo' },
     ],
